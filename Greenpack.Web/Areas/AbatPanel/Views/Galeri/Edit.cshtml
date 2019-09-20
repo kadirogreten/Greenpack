@@ -1,0 +1,99 @@
+﻿@model Models.Entities.Galeri
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/AbatPanel/Views/Shared/_Panel.cshtml";
+}
+
+
+
+<div class="m-grid__item m-grid__item--fluid m-wrapper">
+
+    <div class="m-content">
+        <div class="row">
+
+            <div class="col-md-12">
+
+
+                <!--begin::Portlet-->
+                <div class="m-portlet m-portlet--tab">
+                    <div class="m-portlet__head">
+                        <div class="m-portlet__head-caption">
+                            <div class="m-portlet__head-title">
+                                <span class="m-portlet__head-icon m--hide">
+                                    <i class="la la-gear"></i>
+                                </span>
+                                <h3 class="m-portlet__head-text">
+                                    Square & Solid Input Style
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--begin::Form-->
+                    <form class="m-form m-form--fit m-form--label-align-right" action="/abatpanel/galeri/edit/@Model.Id" method="post" enctype="multipart/form-data">
+                        @Html.AntiForgeryToken()
+                        <div class="m-portlet__body">
+                            <div class="form-group m-form__group m--margin-top-10">
+                                <div class="alert m-alert m-alert--default" role="alert">
+                                    The example form below demonstrates common HTML form elements solid background style:
+                                </div>
+                            </div>
+                            <div class="form-group m-form__group">
+                                <label for="exampleInputEmail1">Galeri Açıklama</label>
+
+
+                                @Html.EditorFor(model => model.Aciklama, new { htmlAttributes = new { @class = "form-control m-input m-input--solid", placeholder = "Başlık" } })
+                                @Html.ValidationMessageFor(model => model.Aciklama, "", new { @class = "text-danger" })
+
+                            </div>
+                            <div class="form-group m-form__group">
+                                <label for="exampleInputPassword1">Galeri Sıra</label>
+                                @Html.EditorFor(model => model.Sira, new { htmlAttributes = new { @class = "form-control m-input m-input--solid", placeholder = "Resim Sıra" } })
+                                @Html.ValidationMessageFor(model => model.Sira, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group m-form__group">
+                                <label for="exampleInputPassword1">Galeri Resim Tipi</label>
+                                @Html.EnumDropDownListFor(model => model.ResimTip, htmlAttributes: new { @class = "form-control m-input m-input--solid" })
+                                @Html.ValidationMessageFor(model => model.ResimTip, "", new { @class = "text-danger" })
+                            </div>
+
+                            @Html.HiddenFor(m => m.Path)
+                            <div class="form-group m-form__group">
+                                <label for="exampleTextarea">Resim</label>
+
+                                <input type="file" name="file">
+                            </div>
+                        </div>
+                        <div class="m-portlet__foot m-portlet__foot--fit">
+                            <div class="m-form__actions">
+                                <button type="submit" class="btn btn-success">Güncelle</button>
+
+                                <button formaction="/abatpanel/galeri/delete/@Model.Id" type="submit" class="btn btn-danger">Sil</button>
+                                <a href="~/abatpanel/galeri/index" type="reset" class="btn btn-secondary">Vazgeç</a>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="card-panel container">
+                        <p>
+                            <img class="img-fluid" width="200" src="@Model.Path" alt="@Model.Aciklama" />
+                        </p>
+
+
+                        <p>Resmi değiştirmek istiyorsanız dosya seç tuşuna tıklayarak yeni resim yükleyiniz!</p>
+                    </div>
+
+                    <!--end::Form-->
+                </div>
+
+                <!--end::Portlet-->
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+

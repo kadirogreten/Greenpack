@@ -1,0 +1,59 @@
+﻿@model Models.Entities.KurumsalMenu
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/AbatPanel/Views/Shared/_Panel.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>KurumsalMenu</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MenuAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MenuAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Baslik)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Baslik)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AltBaslik)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AltBaslik)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Detay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Detay)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sira)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sira)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

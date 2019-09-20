@@ -1,0 +1,167 @@
+﻿@model Models.Entities.HizmetlerimizMenu
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/AbatPanel/Views/Shared/_Panel.cshtml";
+}
+
+<div class="m-grid__item m-grid__item--fluid m-wrapper">
+
+    <div class="m-content">
+        <div class="row">
+
+            <div class="col-md-12">
+
+
+                <!--begin::Portlet-->
+                <div class="m-portlet m-portlet--tab">
+                    <div class="m-portlet__head">
+                        <div class="m-portlet__head-caption">
+                            <div class="m-portlet__head-title">
+                                <span class="m-portlet__head-icon m--hide">
+                                    <i class="la la-gear"></i>
+                                </span>
+                                <h3 class="m-portlet__head-text">
+                                    Square & Solid Input Style
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--begin::Form-->
+                    <form class="m-form m-form--fit m-form--label-align-right" action="/abatpanel/galeri/edit/@Model.Id" method="post" enctype="multipart/form-data">
+                        @Html.AntiForgeryToken()
+                        <div class="m-portlet__body">
+                            <div class="form-group m-form__group m--margin-top-10">
+                                <div class="alert m-alert m-alert--default" role="alert">
+                                    The example form below demonstrates common HTML form elements solid background style:
+                                </div>
+                            </div>
+                            <div class="form-group m-form__group">
+                                <label for="exampleInputEmail1">Galeri Açıklama</label>
+
+
+                                @Html.EditorFor(model => model.HizmetAdi, new { htmlAttributes = new { @class = "form-control m-input m-input--solid", placeholder = "Hizmet Adı" } })
+                                @Html.ValidationMessageFor(model => model.HizmetAdi, "", new { @class = "text-danger" })
+
+                            </div>
+
+                            <div class="form-group m-form__group">
+                                <label for="exampleInputEmail1">Galeri Açıklama</label>
+
+
+                                @Html.EditorFor(model => model.HizmetAciklama, new { htmlAttributes = new { @class = "form-control m-input m-input--solid", placeholder = "Hizmet Açıklama" } })
+                                @Html.ValidationMessageFor(model => model.HizmetAciklama, "", new { @class = "text-danger" })
+
+                            </div>
+                            <div class="form-group m-form__group">
+                                <label for="exampleInputPassword1">Galeri Sıra</label>
+                                @Html.EditorFor(model => model.Sira, new { htmlAttributes = new { @class = "form-control m-input m-input--solid", placeholder = "Hizmet Sıra" } })
+                                @Html.ValidationMessageFor(model => model.Sira, "", new { @class = "text-danger" })
+                            </div>
+
+
+
+                            @Html.HiddenFor(m => m.Resimler)
+                            <div class="form-group m-form__group">
+                                <label for="exampleTextarea">Resim</label>
+
+                                <input type="file" name="files">
+                            </div>
+                        </div>
+                        <div class="m-portlet__foot m-portlet__foot--fit">
+                            <div class="m-form__actions">
+                                <button type="submit" class="btn btn-success">Güncelle</button>
+
+                                <button formaction="/abatpanel/slider/delete/@Model.Id" type="submit" class="btn btn-danger">Sil</button>
+                                <a href="~/abatpanel/slider/index" type="reset" class="btn btn-secondary">Vazgeç</a>
+                            </div>
+                        </div>
+                    </form>
+
+                    @{
+                        if (Model.Resimler != null)
+                        {
+                            foreach (var item in Model.Resimler)
+                            {
+                                <div class="card-panel container">
+                                    <p>
+                                        <img class="img-fluid" width="200" src="@item.Path" alt="@Model.HizmetAdi" />
+                                    </p>
+
+
+                                    <form action="/abatpanel/slider/resimsil/@item.Id" method="post">
+                                        @Html.AntiForgeryToken()
+                                        <p>
+                                            <button class="btn cyan waves-effect waves-light right" type="submit" name="action">
+                                                Resmi Sil
+                                                
+                                            </button>
+                                        </p>
+
+                                    </form>
+                                </div>
+                            }
+                        }
+                    }
+
+
+
+                    <!--end::Form-->
+                </div>
+
+                <!--end::Portlet-->
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>HizmetlerimizMenu</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.HizmetAdi, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.HizmetAdi, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.HizmetAdi, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.HizmetAciklama, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.HizmetAciklama, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.HizmetAciklama, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Sira, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Sira, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Sira, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

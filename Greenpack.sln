@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "DataAcce
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceLayer", "ServiceLayer\ServiceLayer.csproj", "{320D9AE9-1C7C-4D98-8E48-732F51A8BEA0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Greenpack.Web", "Greenpack.Web\Greenpack.Web.csproj", "{054653F4-CA91-413B-A3A9-37DCD656C37A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{320D9AE9-1C7C-4D98-8E48-732F51A8BEA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{320D9AE9-1C7C-4D98-8E48-732F51A8BEA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{320D9AE9-1C7C-4D98-8E48-732F51A8BEA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{054653F4-CA91-413B-A3A9-37DCD656C37A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{054653F4-CA91-413B-A3A9-37DCD656C37A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{054653F4-CA91-413B-A3A9-37DCD656C37A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{054653F4-CA91-413B-A3A9-37DCD656C37A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
