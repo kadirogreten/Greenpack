@@ -1320,6 +1320,7 @@
     <Content Include="Views\Greenpack\Galeri.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Ckeditor.cshtml" />
     <Content Include="Views\Greenpack\Iletisim.cshtml" />
+    <Content Include="Views\Account\DisplayEmail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

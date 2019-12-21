@@ -1,17 +1,17 @@
-﻿@model Greenpack.Web.Models.VerifyCodeViewModel
+﻿@model IdentitySample.Models.VerifyCodeViewModel
 @{
-    ViewBag.Title = "Verify";
+    ViewBag.Title = "Enter Verification Code";
 }
 
 <h2>@ViewBag.Title.</h2>
 
 @using (Html.BeginForm("VerifyCode", "Account", new { ReturnUrl = Model.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" })) {
     @Html.AntiForgeryToken()
+    @Html.ValidationSummary("", new { @class = "text-danger" })
     @Html.Hidden("provider", @Model.Provider)
     @Html.Hidden("rememberMe", @Model.RememberMe)
-    <h4>Enter verification code</h4>
+    <h4>@ViewBag.Status</h4>
     <hr />
-    @Html.ValidationSummary("", new { @class = "text-danger" })
     <div class="form-group">
         @Html.LabelFor(m => m.Code, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
