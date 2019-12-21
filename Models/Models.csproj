@@ -55,7 +55,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\Galeri.cs" />
+    <Compile Include="Entities\GaleriFilter.cs" />
     <Compile Include="Entities\GreenpackUser.cs" />
+    <Compile Include="Entities\Iletisim.cs" />
     <Compile Include="Entities\KurumsalMenu.cs" />
     <Compile Include="Entities\HizmetlerimizMenu.cs" />
     <Compile Include="Entities\Resim.cs" />

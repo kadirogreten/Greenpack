@@ -1,0 +1,194 @@
+﻿@model Models.Entities.Iletisim
+@{
+    ViewBag.Title = "Iletisim";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!--Page Title-->
+<section class="page-title" style="background-image:url(../../Content/images/background/page-title-bg.jpg);">
+    <div class="auto-container">
+        <div class="sec-title">
+            <h1>BİZİMLE <span class="normal-font">İLETİŞİME GEÇİN</span></h1>
+
+        </div>
+    </div>
+</section>
+
+
+<!--Default Section / Other Info-->
+<section class="default-section other-info">
+    <div class="auto-container">
+
+        <div class="row clearfix">
+
+            <!--Info Column-->
+            <div class="column info-column col-lg-5 col-md-6 col-sm-12 col-xs-12">
+                <article class="inner-box">
+                    <h3 class="margin-bott-20">ADRESİMİZ</h3>
+                    <div class="text margin-bott-40"></div>
+                    <ul class="info-box">
+                        <li><span class="icon flaticon-location"></span><strong>Adres</strong> Hüseyin Okan Merzeci Bulvarı 5993 sk Mersin</li>
+                        <li><span class="icon flaticon-technology-5"></span><strong>Telefon</strong><a href="tel:+905535966361">0553 596 63 61</a> </li>
+                        <li><span class="icon flaticon-interface-1"></span><strong>E-posta</strong><a href="mailto:info@greenpack.com">info@greenpack.com</a></li>
+                    </ul>
+                </article>
+            </div>
+
+            <!--Image Column-->
+            <div class="column image-column col-lg-7 col-md-6 col-sm-12 col-xs-12">
+                <article class="inner-box">
+                    <figure class="image-box"><img src="~/Content/images/gallery/iletisim.jpg" alt="Greenpack"></figure>
+                </article>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!--Contact Section-->
+<section class="contact-section no-padd-top">
+    <div class="auto-container">
+
+        <div class="row clearfix">
+
+            <!--Map Column-->
+            <div class="column map-column col-lg-5 col-md-6 col-sm-12 col-xs-12">
+                <h2>HARİTADAKİ YERİMİZ</h2>
+
+                <article class="inner-box">
+                    <!--Map Container-->
+                    <div class="map-container">
+                        <!--Map Canvas-->
+                        <div class="map-canvas"
+                             data-zoom="12"
+                             data-lat="-37.817085"
+                             data-lng="144.955631"
+                             data-type="roadmap"
+                             data-hue="#ffc400"
+                             data-title="Envato"
+                             data-content="Melbourne VIC 3000, Australia<br><a href='mailto:info@greenpack.com'>info@greenpack.com</a>"
+                             style="height: 380px;">
+                        </div>
+
+                    </div>
+                </article>
+            </div>
+
+            <!--Form Column-->
+            <div class="column form-column col-lg-7 col-md-6 col-sm-12 col-xs-12">
+                <h2>İLETİŞİM FORMU</h2>
+                <!--COntact Form-->
+                <div class="inner-box contact-form">
+                    <form method="post" action="/greenpack/iletisim">
+                        @Html.AntiForgeryToken()
+                        <div class="row clearfix">
+                            <!--Form Group-->
+                            <div class="form-group col-md-6 col-xs-12">
+
+                                @Html.EditorFor(model => model.AdiSoyadi, new { htmlAttributes = new { placeholder = "Adınız Soyadınız" } })
+                                @Html.ValidationMessageFor(model => model.AdiSoyadi, "", new { @class = "text-danger" })
+                            </div>
+                            <!--Form Group-->
+                            <div class="form-group col-md-6 col-xs-12">
+                                @Html.EditorFor(model => model.Eposta, new { htmlAttributes = new { placeholder = "E-Posta" } })
+                                @Html.ValidationMessageFor(model => model.Eposta, "", new { @class = "text-danger" })
+                            </div>
+                            <!--Form Group-->
+                            <div class="form-group col-md-12 col-xs-12">
+
+                                @Html.TextAreaFor(model => model.Mesaj, new { htmlAttributes = new { placeholder = "Mesaj" } })
+                                @Html.ValidationMessageFor(model => model.Mesaj, "", new { @class = "text-danger" })
+                            </div>
+
+                            <!--Form Group-->
+                            <div class="form-group col-md-12 col-xs-12">
+                                <div class="text-right"><button type="submit" class="theme-btn btn-style-two">Gönder</button></div>
+                            </div>
+                        </div>
+                    </form>
+                </div><!--COntact Form-->
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+@section scripts {
+
+    <script src="~/Content/js/jquery.js"></script>
+    <script src="~/Content/js/bootstrap.min.js"></script>
+    <script src="~/Content/js/jquery.fancybox.pack.js"></script>
+    <script src="~/Content/js/jquery.fancybox-media.js"></script>
+    <script src="~/Content/js/owl.js"></script>
+    <script src="~/Content/js/map-script.js"></script>
+    <script src="~/Content/js/validate.js"></script>
+    <script src="~/Content/js/wow.js"></script>
+    <script src="~/Content/js/script.js"></script>
+    <link href="~/Panel/assets/vendors/base/vendors.bundle.css" rel="stylesheet" />
+    <script src="~/Panel/assets/vendors/base/vendors.bundle.js"></script>
+
+    @if (ViewBag.Mesaj != null)
+    {
+        if (ViewBag.Status != "error")
+        {
+            <script>
+                    toastr.options = {
+                        "closeButton": true,
+                        "debug": false,
+                        "newestOnTop": false,
+                        "progressBar": false,
+                        "positionClass": "toast-top-right",
+                        "preventDuplicates": false,
+                        "onclick": null,
+                        "showDuration": "300",
+                        "hideDuration": "1000",
+                        "timeOut": "5000",
+                        "extendedTimeOut": "1000",
+                        "showEasing": "swing",
+                        "hideEasing": "linear",
+                        "showMethod": "fadeIn",
+                        "hideMethod": "fadeOut"
+                    };
+
+                    toastr.success("@ViewBag.Mesaj", "Başarılı");
+
+                     $(document).ready(function () {
+
+                    setTimeout(function () {
+                        location.href = "/greenpack/Iletisim";
+                }, 2500);
+            });
+            </script>
+        }
+        else
+        {
+            <script>
+                    toastr.options = {
+                        "closeButton": true,
+                        "debug": false,
+                        "newestOnTop": false,
+                        "progressBar": false,
+                        "positionClass": "toast-top-right",
+                        "preventDuplicates": false,
+                        "onclick": null,
+                        "showDuration": "300",
+                        "hideDuration": "1000",
+                        "timeOut": "5000",
+                        "extendedTimeOut": "1000",
+                        "showEasing": "swing",
+                        "hideEasing": "linear",
+                        "showMethod": "fadeIn",
+                        "hideMethod": "fadeOut"
+                    };
+
+                    toastr.error("@ViewBag.Mesaj", "Hata");
+            </script>
+        }
+    }
+
+
+}

@@ -31,7 +31,7 @@ namespace Greenpack.Web.Areas.AbatPanel.Controllers
         }
 
         // GET: AbatPanel/HizmetlerimizMenu/Details/5
-        public async Task<ActionResult> Details(byte? id)
+        public async Task<ActionResult> Details(int? id)
         {
             if (id == null)
             {
@@ -83,7 +83,7 @@ namespace Greenpack.Web.Areas.AbatPanel.Controllers
                         }
                         else
                         {
-                            ViewBag.Mesaj = "Dosya seçmeden işleminize devam etmektesiniz. Lütfen 2 Adet Resim Dosyası Seçiniz!";
+                            ViewBag.Mesaj = "Dosya seçmeden işleminize devam etmektesiniz. Lütfen en az 1 Adet Resim Dosyası Seçiniz!";
                             ViewBag.Status = "error";
                             ViewBag.Baslik = "Oops!";
                             return View(hizmetlerimizMenu);
@@ -116,7 +116,7 @@ namespace Greenpack.Web.Areas.AbatPanel.Controllers
         }
 
         // GET: AbatPanel/HizmetlerimizMenu/Edit/5
-        public async Task<ActionResult> Edit(byte? id)
+        public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
             {
@@ -206,7 +206,7 @@ namespace Greenpack.Web.Areas.AbatPanel.Controllers
         }
 
         // GET: AbatPanel/HizmetlerimizMenu/Delete/5
-        public async Task<ActionResult> Delete(byte? id)
+        public async Task<ActionResult> Delete(int? id)
         {
             if (id == null)
             {
@@ -227,7 +227,7 @@ namespace Greenpack.Web.Areas.AbatPanel.Controllers
         // POST: AbatPanel/HizmetlerimizMenu/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> DeleteConfirmed(byte id)
+        public async Task<ActionResult> DeleteConfirmed(int id)
         {
             using (var uow = new UnitOfWork(new GreenpackDbContext()))
             {

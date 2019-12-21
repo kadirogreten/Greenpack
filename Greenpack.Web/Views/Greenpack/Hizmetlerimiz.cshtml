@@ -1,7 +1,75 @@
-﻿
+﻿@model Models.Entities.HizmetlerimizMenu
 @{
     ViewBag.Title = "Hizmetlerimiz";
 }
 
-<h2>Hizmetlerimiz</h2>
+<!--Page Title-->
+<section class="page-title" style="background-image:url(../../Content/images/background/page-title-bg.jpg);">
+    <div class="auto-container">
+        <div class="sec-title">
+            <h1>HİZMETLERİMİZ</h1>
+            <div class="bread-crumb"><a href="@Url.Action("index","greenpack")">ANASAYFA</a> / <a href="~/hizmetlerimiz/@Model.HizmetAdi.Replace(" ", "-").Replace(".", "").Replace("İ", "i").Replace("I", "i").Replace("&", "-")" class="current">@Model.HizmetAdi</a></div>
+        </div>
+    </div>
+</section>
+
+
+<!--ihracat-sandıkları/ Section-->
+<section class="gallery-section">
+    <div class="auto-container">
+        <section class="default-section bg-light-grey">
+            <div class="sec-title text-left">
+                <h2>@Model.HizmetAdi</h2>
+                <div class="text"><p>@Model.HizmetAciklama </div>
+            </div>
+        </section>
+
+
+        <!--Filter List-->
+        <div class="row filter-list clearfix">
+
+
+
+            @{
+                if (Model.Resimler.Count() != 0)
+                {
+                    foreach (var item in Model.Resimler)
+                    {
+                        <!--Column-->
+                        <div class="column mix mix_all environment  energy animals col-md-4 col-sm-6 col-xs-12">
+                            <!--Default Portfolio Item-->
+                            <div class="default-portfolio-item">
+                                <div class="inner-box text-center">
+                                    <!--Image Box-->
+                                    <figure class="image-box"><img src="@item.Path" alt="@item.HizmetlerimizMenu.HizmetAdi"></figure>
+                                    <div class="overlay-box">
+                                        <div class="inner-content">
+                                            <div class="content">
+                                                <a class="arrow lightbox-image" href="@item.Path" title="@item.HizmetlerimizMenu.HizmetAciklama"><span class="icon flaticon-cross-4"></span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                }
+            }
+
+
+
+        </div>
+
+    </div>
+
+</section>
+
+@section scripts {
+    <script src="~/Content/js/owl.js"></script>
+    <script src="~/Content/js/mixitup.js"></script>
+    <script src="~/Content/js/wow.js"></script>
+    <script src="~/Content/js/script.js"></script>
+
+}
 

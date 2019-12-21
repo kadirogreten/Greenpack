@@ -55,11 +55,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\GaleriFilterRepository\GaleriFilterRepository.cs" />
+    <Compile Include="Repository\GaleriFilterRepository\IGaleriFilterRepository.cs" />
     <Compile Include="Repository\GaleriRepository\GaleriRepository.cs" />
     <Compile Include="Repository\GaleriRepository\IGaleriRepository.cs" />
     <Compile Include="Repository\GenericRepository.cs" />
     <Compile Include="Repository\HizmetlerimizRepository\HizmetlerimizRepository.cs" />
     <Compile Include="Repository\HizmetlerimizRepository\IHizmetlerRepository.cs" />
+    <Compile Include="Repository\IletisimRepository\IIletisimRepository.cs" />
+    <Compile Include="Repository\IletisimRepository\IletisimRepository.cs" />
     <Compile Include="Repository\IRepository.cs" />
     <Compile Include="Repository\KurumsalRepository\IKurumsalRepository.cs" />
     <Compile Include="Repository\KurumsalRepository\KurumsalRepository.cs" />

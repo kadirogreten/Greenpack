@@ -169,8 +169,10 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\AbatPanel\AbatPanelAreaRegistration.cs" />
     <Compile Include="Areas\AbatPanel\Controllers\GaleriController.cs" />
+    <Compile Include="Areas\AbatPanel\Controllers\GaleriFilterController.cs" />
     <Compile Include="Areas\AbatPanel\Controllers\HizmetlerimizMenuController.cs" />
     <Compile Include="Areas\AbatPanel\Controllers\HomeController.cs" />
+    <Compile Include="Areas\AbatPanel\Controllers\IletisimController.cs" />
     <Compile Include="Areas\AbatPanel\Controllers\KurumsalMenuController.cs" />
     <Compile Include="Areas\AbatPanel\Controllers\SliderController.cs" />
     <Compile Include="Areas\AbatPanel\Models\DashboardViewModel.cs" />
@@ -196,6 +198,7 @@
     </Compile>
     <Compile Include="Helpers\CkeditorHtmlHelpers.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\HomeViewModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -914,6 +917,17 @@
     <Content Include="Areas\AbatPanel\Views\HizmetlerimizMenu\Details.cshtml" />
     <Content Include="Areas\AbatPanel\Views\HizmetlerimizMenu\Edit.cshtml" />
     <Content Include="Areas\AbatPanel\Views\HizmetlerimizMenu\Index.cshtml" />
+    <Content Include="Areas\AbatPanel\Views\GaleriFilter\Create.cshtml" />
+    <Content Include="Areas\AbatPanel\Views\GaleriFilter\Delete.cshtml" />
+    <Content Include="Areas\AbatPanel\Views\GaleriFilter\Details.cshtml" />
+    <Content Include="Areas\AbatPanel\Views\GaleriFilter\Edit.cshtml" />
+    <Content Include="Areas\AbatPanel\Views\GaleriFilter\Index.cshtml" />
+    <Content Include="Areas\AbatPanel\Views\Iletisim\Create.cshtml" />
+    <Content Include="Areas\AbatPanel\Views\Iletisim\Delete.cshtml" />
+    <Content Include="Areas\AbatPanel\Views\Iletisim\Details.cshtml" />
+    <Content Include="Areas\AbatPanel\Views\Iletisim\Edit.cshtml" />
+    <Content Include="Areas\AbatPanel\Views\Iletisim\Index.cshtml" />
+    <Content Include="Areas\AbatPanel\Views\Iletisim\OkunanMesajlar.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\ckeditor\ckeditor.php" />
     <Content Include="Scripts\ckeditor\ckeditor_basic.js" />
@@ -1304,6 +1318,7 @@
     <Content Include="Views\Greenpack\Hizmetlerimiz.cshtml" />
     <Content Include="Views\Greenpack\Galeri.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Ckeditor.cshtml" />
+    <Content Include="Views\Greenpack\Iletisim.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

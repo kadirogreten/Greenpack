@@ -1,4 +1,18 @@
-﻿<!DOCTYPE html>
+﻿@using DataAccessLayer.Context;
+@using Models.Entities;
+@using ServiceLayer.Uow;
+
+
+@{
+    var uow = new UnitOfWork(new GreenpackDbContext());
+
+    var kurumsal = uow.Kurumsal.GetAll();
+
+    var hizmetler = uow.Hizmetlerimiz.GetAllWithInclude();
+}
+
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" lang="tr">
@@ -66,27 +80,47 @@
                             <div class="navbar-collapse collapse clearfix">
                                 <ul class="navigation">
 
-                                    <li>
+                                    <li class="current">
                                         <a href="@Url.Action("index","greenpack")">ANASAYFA</a>
                                         <!-- <ul>
                                             <li><a href="index.html">Homepage One</a></li>
                                             <li><a href="index-2.html">Homepage Two</a></li>
                                         </ul> -->
                                     </li>
-                                    <li class="current dropdown">
+                                    <li class="dropdown">
                                         <a href="about.html">HAKKIMIZDA</a>
                                         <ul>
-                                            <li><a href="about-misyonumuz.html">Misyonumuz</a></li>
-                                            <li><a href="about-vizyonumuz.html">Vizyonumuz</a></li>
-                                            <li><a href="about-degerlerimiz.html">Değerlerimiz</a></li>
+                                            @{
+                                                if (kurumsal.Count() != 0)
+                                                {
+                                                    foreach (var item in kurumsal)
+                                                    {
+                                                        <li><a href="~/greenpack/@item.MenuAdi.Replace(" ", "-").Replace(".", "").Replace("İ", "i").Replace("I", "i").Replace("&", "-")">@item.MenuAdi</a></li>
+                                                    }
+                                                }
+                                            }
+                                            @*<li><a href="about-misyonumuz.html">Misyonumuz</a></li>
+                                                <li><a href="about-vizyonumuz.html">Vizyonumuz</a></li>
+                                                <li><a href="about-degerlerimiz.html">Değerlerimiz</a></li>*@
                                         </ul>
 
                                     </li>
                                     <li class="dropdown">
                                         <a href="#">HİZMETLERİMİZ</a>
                                         <ul>
-                                            <li><a href="ihracat-sandiklar.html">İhracat Sandıklar</a></li>
-                                            <!-- <li class="dropdown"><a href="#">Projects</a>
+
+                                            @{
+                                                if (hizmetler.Count() != 0)
+                                                {
+                                                    foreach (var item in hizmetler)
+                                                    {
+                                                        <li><a href="~/hizmetlerimiz/@item.HizmetAdi.Replace(" ", "-").Replace(".", "").Replace("İ", "i").Replace("I", "i").Replace("&", "-")">@item.HizmetAdi</a></li>
+                                                    }
+                                                }
+                                            }
+
+                                            @*<li><a href="ihracat-sandiklar.html">İhracat Sandıklar</a></li>
+                                             <li class="dropdown"><a href="#">Projects</a>
                                                 <ul>
                                                     <li><a href="projects.html">Projects</a></li>
                                                     <li><a href="projects-two-column.html">Projects Two Column</a></li>
@@ -99,12 +133,12 @@
                                                     <li><a href="events-grid.html">Events Grid View</a></li>
                                                     <li><a href="event-single.html">Single Event</a></li>
                                                 </ul>
-                                            </li> -->
+                                            </li> 
                                             <li><a href="ashap-meyve-sandiklari.html">Ahşap Meyve Sandıkları</a></li>
                                             <li><a href="baskili-sandik-imalati.html">Baskılı Sandık İmalatı</a></li>
                                             <li><a href="euro-palet.html">Euro Palet</a></li>
                                             <li><a href="cam.html">Çam</a></li>
-                                            <li><a href="kavak-palet.html">Kavak Palet İmalatı</a></li>
+                                            <li><a href="kavak-palet.html">Kavak Palet İmalatı</a></li>*@
                                         </ul>
                                     </li>
                                     <!-- <li class="dropdown"><a href="#">Events</a>

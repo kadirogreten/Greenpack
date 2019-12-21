@@ -12,6 +12,17 @@ namespace Greenpack.Web
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            routes.MapMvcAttributeRoutes();
+
+            routes.MapRoute(
+             name: "Menu",
+             url: "{controller}/{action}/{title}",
+             defaults: null,
+             constraints: new { title = @"[a-zA-Z]+".Replace(" ", "-") } //Burada yönlendirmenin yapılabilmesi için
+                                                                         //title verisinin yalnızca metinsel olmasını şart koştuk.
+
+          );
+
 
             routes.MapRoute(
                 name: "Default",

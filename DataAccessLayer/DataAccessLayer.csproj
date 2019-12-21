@@ -71,6 +71,22 @@
     <Compile Include="Migrations\201909202024130_int.Designer.cs">
       <DependentUpon>201909202024130_int.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201909231318551_galeri.cs" />
+    <Compile Include="Migrations\201909231318551_galeri.Designer.cs">
+      <DependentUpon>201909231318551_galeri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909231355010_galeris.cs" />
+    <Compile Include="Migrations\201909231355010_galeris.Designer.cs">
+      <DependentUpon>201909231355010_galeris.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909231557021_iletisim.cs" />
+    <Compile Include="Migrations\201909231557021_iletisim.Designer.cs">
+      <DependentUpon>201909231557021_iletisim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909231559284_iletisims.cs" />
+    <Compile Include="Migrations\201909231559284_iletisims.Designer.cs">
+      <DependentUpon>201909231559284_iletisims.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -96,6 +112,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201909202024130_int.resx">
       <DependentUpon>201909202024130_int.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909231318551_galeri.resx">
+      <DependentUpon>201909231318551_galeri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909231355010_galeris.resx">
+      <DependentUpon>201909231355010_galeris.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909231557021_iletisim.resx">
+      <DependentUpon>201909231557021_iletisim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909231559284_iletisims.resx">
+      <DependentUpon>201909231559284_iletisims.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

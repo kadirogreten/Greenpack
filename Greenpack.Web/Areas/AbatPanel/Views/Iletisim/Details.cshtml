@@ -1,0 +1,61 @@
+﻿@model Models.Entities.Iletisim
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/AbatPanel/Views/Shared/_Panel.cshtml";
+}
+
+
+
+
+<div class="m-grid__item m-grid__item--fluid m-wrapper">
+
+    <div class="m-content">
+        <div class="row">
+
+            <div class="col-md-12">
+
+
+                <!--begin::Portlet-->
+                <div class="m-portlet m-portlet--tab">
+                    <div class="m-portlet__head">
+                        <div class="m-portlet__head-caption">
+                            <div class="m-portlet__head-title">
+                                <span class="m-portlet__head-icon m--hide">
+                                    <i class="la la-gear"></i>
+                                </span>
+                                <h3 class="m-portlet__head-text">
+                                    @Model.AdiSoyadi - @Model.Eposta - @Model.CreatedDate.ToShortDateString()
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--begin::Form-->
+                   
+                        <div class="m-portlet__body">
+                            <div class="form-group m-form__group m--margin-top-10">
+                                <strong>Mesaj</strong>
+                                <div class="alert m-alert m-alert--default" role="alert">
+                                   @Model.Mesaj
+                                </div>
+                            </div>
+                            
+
+                        </div>
+                        <div class="m-portlet__foot m-portlet__foot--fit">
+                            <div class="m-form__actions">
+                                <button formaction="/abatpanel/iletisim/delete/@Model.Id" type="submit" class="btn btn-danger">Sil</button>
+                                <a href="~/abatpanel/iletisim/index" type="reset" class="btn btn-secondary">Çık</a>
+                            </div>
+                        </div>
+
+                    <!--end::Form-->
+                </div>
+
+                <!--end::Portlet-->
+
+            </div>
+        </div>
+    </div>
+</div>

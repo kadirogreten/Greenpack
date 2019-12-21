@@ -1,6 +1,8 @@
 ﻿using DataAccessLayer.Context;
+using ServiceLayer.Repository.GaleriFilterRepository;
 using ServiceLayer.Repository.GaleriRepository;
 using ServiceLayer.Repository.HizmetlerimizRepository;
+using ServiceLayer.Repository.IletisimRepository;
 using ServiceLayer.Repository.KurumsalRepository;
 using ServiceLayer.Repository.ResimRepository;
 using ServiceLayer.Repository.SliderRepository;
@@ -18,6 +20,9 @@ namespace ServiceLayer.Uow
             Hizmetlerimiz = new HizmetlerimizRepository(_context);
             Kurumsal = new KurumsalRepository(_context);
             Resim = new ResimRepository(_context);
+            Slider = new SliderRepository(_context);
+            GaleriFilter = new GaleriFilterRepository(_context);
+            Iletisim = new IletisimRepository(_context);
 
         }
 
@@ -26,7 +31,9 @@ namespace ServiceLayer.Uow
         public IHizmetlerRepository Hizmetlerimiz { get; private set; }
         public IKurumsalRepository Kurumsal { get; private set; }
         public ISliderRepository Slider { get; private set; }
-        public IResimRepository Resim { get; }
+        public IResimRepository Resim { get; private set; }
+        public IGaleriFilterRepository GaleriFilter { get; private set; }
+        public IIletisimRepository Iletisim { get; private set; }
 
 
         public int Complete()

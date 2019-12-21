@@ -1,5 +1,7 @@
-﻿using ServiceLayer.Repository.GaleriRepository;
+﻿using ServiceLayer.Repository.GaleriFilterRepository;
+using ServiceLayer.Repository.GaleriRepository;
 using ServiceLayer.Repository.HizmetlerimizRepository;
+using ServiceLayer.Repository.IletisimRepository;
 using ServiceLayer.Repository.KurumsalRepository;
 using ServiceLayer.Repository.ResimRepository;
 using ServiceLayer.Repository.SliderRepository;
@@ -20,6 +22,9 @@ namespace ServiceLayer.Uow
         IKurumsalRepository Kurumsal { get; }
         ISliderRepository Slider { get; }
         IResimRepository Resim { get; }
+        IGaleriFilterRepository GaleriFilter { get; }
+        IIletisimRepository Iletisim { get; }
+
 
         int Complete();
     }

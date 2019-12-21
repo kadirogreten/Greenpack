@@ -1,6 +1,9 @@
-﻿
+﻿@model Greenpack.Web.Models.HomeViewModel
 @{
     ViewBag.Title = "Index";
+
+
+
 }
 
 
@@ -12,135 +15,224 @@
     <div class="tp-banner-container">
         <div class="tp-banner">
             <ul>
-
-                <li data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-thumb="~/Content/images/main-slider/1.jpg" data-saveperformance="off" data-title="Awesome Title Here">
-                    <img src="~/Content/images/main-slider/1.jpg" alt="" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
+                @{
 
 
-                    <div class="tp-caption sfl sfb tp-resizeme"
-                         data-x="left" data-hoffset="15"
-                         data-y="center" data-voffset="-150"
-                         data-speed="1500"
-                         data-start="500"
-                         data-easing="easeOutExpo"
-                         data-splitin="none"
-                         data-splitout="none"
-                         data-elementdelay="0.01"
-                         data-endelementdelay="0.3"
-                         data-endspeed="1200"
-                         data-endeasing="Power4.easeIn"><div class="circular-drop">0<sub>2</sub></div></div>
 
-                    <div class="tp-caption sfr sfb tp-resizeme"
-                         data-x="left" data-hoffset="90"
-                         data-y="center" data-voffset="-50"
-                         data-speed="1500"
-                         data-start="1000"
-                         data-easing="easeOutExpo"
-                         data-splitin="none"
-                         data-splitout="none"
-                         data-elementdelay="0.01"
-                         data-endelementdelay="0.3"
-                         data-endspeed="1200"
-                         data-endeasing="Power4.easeIn"><h1><span class="normal-font">GREENPACK</span></h1></div>
+                    var slider = Model.Sliders;
 
-                    <div class="tp-caption sfl sfb tp-resizeme"
-                         data-x="left" data-hoffset="90"
-                         data-y="center" data-voffset="40"
-                         data-speed="1500"
-                         data-start="1500"
-                         data-easing="easeOutExpo"
-                         data-splitin="none"
-                         data-splitout="none"
-                         data-elementdelay="0.01"
-                         data-endelementdelay="0.3"
-                         data-endspeed="1200"
-                         data-endeasing="Power4.easeIn"><h3 class="bg-color">Ahşap İhracat Sandıkları İmalatı </h3></div>
 
-                    <!--                <div class="tp-caption sfl sfb tp-resizeme"
-                                   data-x="left" data-hoffset="90"
-                                   data-y="center" data-voffset="110"
-                                   data-speed="1500"
-                                   data-start="2000"
-                                   data-easing="easeOutExpo"
-                                   data-splitin="none"
-                                   data-splitout="none"
-                                   data-elementdelay="0.01"
-                                   data-endelementdelay="0.3"
-                                   data-endspeed="1200"
-                                   data-endeasing="Power4.easeIn"><div class="text">Lorem ipsum dolor sit amet, debet dolore mollis his ad, ea usu <br>soleat detraxit.In vix agam moderatius. Modo partiendo.</div></div> -->
-                    <!-- <div class="tp-caption sfr sfb tp-resizeme"
-                    data-x="left" data-hoffset="90"
-                    data-y="center" data-voffset="190"
-                    data-speed="1500"
-                    data-start="2000"
-                    data-easing="easeOutExpo"
-                    data-splitin="none"
-                    data-splitout="none"
-                    data-elementdelay="0.01"
-                    data-endelementdelay="0.3"
-                    data-endspeed="1200"
-                    data-endeasing="Power4.easeIn"><a href="#" class="theme-btn btn-style-one">Learn More</a></div> -->
 
-                </li>
+
+                    if (slider.Count() == 0)
+                    {
+                        <li data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-thumb="~/Content/images/main-slider/1.jpg" data-saveperformance="off" data-title="Awesome Title Here">
+                            <img src="~/Content/images/main-slider/1.jpg" alt="" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
+
+
+                            <div class="tp-caption sfl sfb tp-resizeme"
+                                 data-x="left" data-hoffset="15"
+                                 data-y="center" data-voffset="-150"
+                                 data-speed="1500"
+                                 data-start="500"
+                                 data-easing="easeOutExpo"
+                                 data-splitin="none"
+                                 data-splitout="none"
+                                 data-elementdelay="0.01"
+                                 data-endelementdelay="0.3"
+                                 data-endspeed="1200"
+                                 data-endeasing="Power4.easeIn"><div class="circular-drop">0<sub>2</sub></div></div>
+
+                            <div class="tp-caption sfr sfb tp-resizeme"
+                                 data-x="left" data-hoffset="90"
+                                 data-y="center" data-voffset="-50"
+                                 data-speed="1500"
+                                 data-start="1000"
+                                 data-easing="easeOutExpo"
+                                 data-splitin="none"
+                                 data-splitout="none"
+                                 data-elementdelay="0.01"
+                                 data-endelementdelay="0.3"
+                                 data-endspeed="1200"
+                                 data-endeasing="Power4.easeIn"><h1><span class="normal-font">GREENPACK</span></h1></div>
+
+                            <div class="tp-caption sfl sfb tp-resizeme"
+                                 data-x="left" data-hoffset="90"
+                                 data-y="center" data-voffset="40"
+                                 data-speed="1500"
+                                 data-start="1500"
+                                 data-easing="easeOutExpo"
+                                 data-splitin="none"
+                                 data-splitout="none"
+                                 data-elementdelay="0.01"
+                                 data-endelementdelay="0.3"
+                                 data-endspeed="1200"
+                                 data-endeasing="Power4.easeIn"><h3 class="bg-color">Ahşap İhracat Sandıkları İmalatı </h3></div>
+
+                            <!--                <div class="tp-caption sfl sfb tp-resizeme"
+                            data-x="left" data-hoffset="90"
+                            data-y="center" data-voffset="110"
+                            data-speed="1500"
+                            data-start="2000"
+                            data-easing="easeOutExpo"
+                            data-splitin="none"
+                            data-splitout="none"
+                            data-elementdelay="0.01"
+                            data-endelementdelay="0.3"
+                            data-endspeed="1200"
+                            data-endeasing="Power4.easeIn"><div class="text">Lorem ipsum dolor sit amet, debet dolore mollis his ad, ea usu <br>soleat detraxit.In vix agam moderatius. Modo partiendo.</div></div> -->
+                            <!-- <div class="tp-caption sfr sfb tp-resizeme"
+                            data-x="left" data-hoffset="90"
+                            data-y="center" data-voffset="190"
+                            data-speed="1500"
+                            data-start="2000"
+                            data-easing="easeOutExpo"
+                            data-splitin="none"
+                            data-splitout="none"
+                            data-elementdelay="0.01"
+                            data-endelementdelay="0.3"
+                            data-endspeed="1200"
+                            data-endeasing="Power4.easeIn"><a href="#" class="theme-btn btn-style-one">Learn More</a></div> -->
+
+                        </li>
+                    }
+                    else
+                    {
+                        foreach (var item in slider)
+                        {
+                            <li data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-thumb="@item.Path" data-saveperformance="off" data-title="@item.Aciklama1">
+                                <img src="@item.Path" alt="" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
+
+
+                                <div class="tp-caption sfl sfb tp-resizeme"
+                                     data-x="left" data-hoffset="15"
+                                     data-y="center" data-voffset="-150"
+                                     data-speed="1500"
+                                     data-start="500"
+                                     data-easing="easeOutExpo"
+                                     data-splitin="none"
+                                     data-splitout="none"
+                                     data-elementdelay="0.01"
+                                     data-endelementdelay="0.3"
+                                     data-endspeed="1200"
+                                     data-endeasing="Power4.easeIn"><div class="circular-drop">@item.Aciklama1</div></div>
+
+                                    <div class="tp-caption sfr sfb tp-resizeme"
+                                         data-x="left" data-hoffset="90"
+                                         data-y="center" data-voffset="-50"
+                                         data-speed="1500"
+                                         data-start="1000"
+                                         data-easing="easeOutExpo"
+                                         data-splitin="none"
+                                         data-splitout="none"
+                                         data-elementdelay="0.01"
+                                         data-endelementdelay="0.3"
+                                         data-endspeed="1200"
+                                         data-endeasing="Power4.easeIn"><h1><span class="normal-font">@item.Aciklama2</span></h1></div>
+
+                                        <div class="tp-caption sfl sfb tp-resizeme"
+                                             data-x="left" data-hoffset="90"
+                                             data-y="center" data-voffset="40"
+                                             data-speed="1500"
+                                             data-start="1500"
+                                             data-easing="easeOutExpo"
+                                             data-splitin="none"
+                                             data-splitout="none"
+                                             data-elementdelay="0.01"
+                                             data-endelementdelay="0.3"
+                                             data-endspeed="1200"
+                                             data-endeasing="Power4.easeIn"><h3 class="bg-color">@item.Aciklama3 </h3></div>
+
+                                            <!--                <div class="tp-caption sfl sfb tp-resizeme"
+                                               data-x="left" data-hoffset="90"
+                                               data-y="center" data-voffset="110"
+                                               data-speed="1500"
+                                               data-start="2000"
+                                               data-easing="easeOutExpo"
+                                               data-splitin="none"
+                                               data-splitout="none"
+                                               data-elementdelay="0.01"
+                                               data-endelementdelay="0.3"
+                                               data-endspeed="1200"
+                                               data-endeasing="Power4.easeIn"><div class="text">Lorem ipsum dolor sit amet, debet dolore mollis his ad, ea usu <br>soleat detraxit.In vix agam moderatius. Modo partiendo.</div></div> -->
+                                            <!-- <div class="tp-caption sfr sfb tp-resizeme"
+                                            data-x="left" data-hoffset="90"
+                                            data-y="center" data-voffset="190"
+                                            data-speed="1500"
+                                            data-start="2000"
+                                            data-easing="easeOutExpo"
+                                            data-splitin="none"
+                                            data-splitout="none"
+                                            data-elementdelay="0.01"
+                                            data-endelementdelay="0.3"
+                                            data-endspeed="1200"
+                                            data-endeasing="Power4.easeIn"><a href="#" class="theme-btn btn-style-one">Learn More</a></div> -->
+
+                                        </li>
+                                    }
+                                }
+                }
+
+
 
                 <!--  <li data-transition="slidedown" data-slotamount="1" data-masterspeed="1000" data-thumb="images/main-slider/2.jpg"  data-saveperformance="off"  data-title="Awesome Title Here">
-                 <img src="images/main-slider/2.jpg"  alt=""  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
+                <img src="images/main-slider/2.jpg"  alt=""  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
 
 
-                 <div class="tp-caption sfl sfb tp-resizeme"
-                 data-x="center" data-hoffset="0"
-                 data-y="center" data-voffset="-120"
-                 data-speed="1500"
-                 data-start="500"
-                 data-easing="easeOutExpo"
-                 data-splitin="none"
-                 data-splitout="none"
-                 data-elementdelay="0.01"
-                 data-endelementdelay="0.3"
-                 data-endspeed="1200"
-                 data-endeasing="Power4.easeIn"><h2 class="normal-font"></h2></div>
+                <div class="tp-caption sfl sfb tp-resizeme"
+                data-x="center" data-hoffset="0"
+                data-y="center" data-voffset="-120"
+                data-speed="1500"
+                data-start="500"
+                data-easing="easeOutExpo"
+                data-splitin="none"
+                data-splitout="none"
+                data-elementdelay="0.01"
+                data-endelementdelay="0.3"
+                data-endspeed="1200"
+                data-endeasing="Power4.easeIn"><h2 class="normal-font"></h2></div>
 
-                 <div class="tp-caption sfr sfb tp-resizeme"
-                 data-x="center" data-hoffset="0"
-                 data-y="center" data-voffset="-30"
-                 data-speed="1500"
-                 data-start="1000"
-                 data-easing="easeOutExpo"
-                 data-splitin="none"
-                 data-splitout="none"
-                 data-elementdelay="0.01"
-                 data-endelementdelay="0.3"
-                 data-endspeed="1200"
-                 data-endeasing="Power4.easeIn"><h2></h2></div>
+                <div class="tp-caption sfr sfb tp-resizeme"
+                data-x="center" data-hoffset="0"
+                data-y="center" data-voffset="-30"
+                data-speed="1500"
+                data-start="1000"
+                data-easing="easeOutExpo"
+                data-splitin="none"
+                data-splitout="none"
+                data-elementdelay="0.01"
+                data-endelementdelay="0.3"
+                data-endspeed="1200"
+                data-endeasing="Power4.easeIn"><h2></h2></div>
 
-                 <div class="tp-caption sfl sfb tp-resizeme"
-                 data-x="center" data-hoffset="0"
-                 data-y="center" data-voffset="50"
-                 data-speed="1500"
-                 data-start="1500"
-                 data-easing="easeOutExpo"
-                 data-splitin="none"
-                 data-splitout="none"
-                 data-elementdelay="0.01"
-                 data-endelementdelay="0.3"
-                 data-endspeed="1200"
-                 data-endeasing="Power4.easeIn"><h4></h4></div>
+                <div class="tp-caption sfl sfb tp-resizeme"
+                data-x="center" data-hoffset="0"
+                data-y="center" data-voffset="50"
+                data-speed="1500"
+                data-start="1500"
+                data-easing="easeOutExpo"
+                data-splitin="none"
+                data-splitout="none"
+                data-elementdelay="0.01"
+                data-endelementdelay="0.3"
+                data-endspeed="1200"
+                data-endeasing="Power4.easeIn"><h4></h4></div>
 
-                 <div class="tp-caption sfr sfb tp-resizeme"
-                 data-x="center" data-hoffset="0"
-                 data-y="center" data-voffset="120"
-                 data-speed="1500"
-                 data-start="2000"
-                 data-easing="easeOutExpo"
-                 data-splitin="none"
-                 data-splitout="none"
-                 data-elementdelay="0.01"
-                 data-endelementdelay="0.3"
-                 data-endspeed="1200"
-                 data-endeasing="Power4.easeIn"><a href="#" class="theme-btn btn-style-one"></a></div>
+                <div class="tp-caption sfr sfb tp-resizeme"
+                data-x="center" data-hoffset="0"
+                data-y="center" data-voffset="120"
+                data-speed="1500"
+                data-start="2000"
+                data-easing="easeOutExpo"
+                data-splitin="none"
+                data-splitout="none"
+                data-elementdelay="0.01"
+                data-endelementdelay="0.3"
+                data-endspeed="1200"
+                data-endeasing="Power4.easeIn"><a href="#" class="theme-btn btn-style-one"></a></div>
 
-                 </li>
-                  -->
+                </li>
+                 -->
 
 
 
@@ -214,44 +306,69 @@
             <div class="text"></div>
         </div>
         <div class="row clearfix">
+            @{
+                var hizmetler = Model.HizmetlerimizMenu;
 
-            <!--News Column-->
-            <div class="column blog-news-column col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                <article class="inner-box wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
-                    <figure class="image-box">
-                        <a href="ihracat-sandiklar.html"><img src="~/Content/images/gallery/anasayfa1.jpg" alt=""></a>
-                    </figure>
-                    <div class="content-box">
-                        <h3><a href="ihracat-sandiklar.html">Ihracat Sandıklarımız</a></h3>
+                if (hizmetler.Count() != 0)
+                {
 
-                    </div>
-                </article>
-            </div>
+                    foreach (var item in hizmetler)
+                    {
+                        <div class="column blog-news-column col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                            <article class="inner-box wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
+                                <figure class="image-box">
+                                    <a href="~/hizmetlerimiz/@item.HizmetAdi.Replace(" ", "-").Replace(".", "").Replace("İ", "i").Replace("I", "i").Replace("&", "-")"><img src="@item.Resimler.First().Path" alt="@item.HizmetAdi"></a>
+                                </figure>
+                                <div class="content-box">
+                                    <h3><a href="~/hizmetlerimiz/@item.HizmetAdi.Replace(" ", "-").Replace(".", "").Replace("İ", "i").Replace("I", "i").Replace("&", "-")">@item.HizmetAdi</a></h3>
 
-            <!--News Column-->
-            <div class="column blog-news-column col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                <article class="inner-box wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms">
-                    <figure class="image-box">
-                        <a href="ashap-meyve-sandiklari.html"><img src="~/Content/images/gallery/anasayfa2.jpg" alt=""></a>
-                    </figure>
-                    <div class="content-box">
-                        <h3><a href="ashap-meyve-sandiklari.html">Ahşap Meyve Sandıkları</a></h3>
-                    </div>
-                </article>
-            </div>
+                                </div>
+                            </article>
+                        </div>
+                    }
 
-            <!--News Column-->
-            <div class="column blog-news-column col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                <article class="inner-box wow fadeInUp" data-wow-delay="600ms" data-wow-duration="1500ms">
-                    <figure class="image-box">
-                        <a href="euro-palet.html"><img src="~/Content/images/gallery/anasayfa3.jpg" alt=""></a>
-                    </figure>
-                    <div class="content-box">
-                        <h3><a href="euro-palet.html">Euro paletlerimiz</a></h3>
 
-                    </div>
-                </article>
-            </div>
+                }
+
+
+            }
+            @*<!--News Column-->
+        <div class="column blog-news-column col-lg-4 col-md-6 col-sm-6 col-xs-12">
+            <article class="inner-box wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
+                <figure class="image-box">
+                    <a href="ihracat-sandiklar.html"><img src="~/Content/images/gallery/anasayfa1.jpg" alt=""></a>
+                </figure>
+                <div class="content-box">
+                    <h3><a href="ihracat-sandiklar.html">Ihracat Sandıklarımız</a></h3>
+
+                </div>
+            </article>
+        </div>
+
+        <!--News Column-->
+        <div class="column blog-news-column col-lg-4 col-md-6 col-sm-6 col-xs-12">
+            <article class="inner-box wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms">
+                <figure class="image-box">
+                    <a href="ashap-meyve-sandiklari.html"><img src="~/Content/images/gallery/anasayfa2.jpg" alt=""></a>
+                </figure>
+                <div class="content-box">
+                    <h3><a href="ashap-meyve-sandiklari.html">Ahşap Meyve Sandıkları</a></h3>
+                </div>
+            </article>
+        </div>
+
+        <!--News Column-->
+        <div class="column blog-news-column col-lg-4 col-md-6 col-sm-6 col-xs-12">
+            <article class="inner-box wow fadeInUp" data-wow-delay="600ms" data-wow-duration="1500ms">
+                <figure class="image-box">
+                    <a href="euro-palet.html"><img src="~/Content/images/gallery/anasayfa3.jpg" alt=""></a>
+                </figure>
+                <div class="content-box">
+                    <h3><a href="euro-palet.html">Euro paletlerimiz</a></h3>
+
+                </div>
+            </article>
+        </div>*@
 
 
         </div>

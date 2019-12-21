@@ -1,0 +1,27 @@
+﻿@model Models.Entities.GaleriFilter
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/AbatPanel/Views/Shared/_Panel.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>GaleriFilter</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FilterName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FilterName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

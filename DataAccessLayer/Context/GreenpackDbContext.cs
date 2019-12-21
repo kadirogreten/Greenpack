@@ -25,5 +25,7 @@ namespace DataAccessLayer.Context
         public DbSet<Resim> Resim { get; set; }
         public DbSet<Galeri> Galeri { get; set; }
         public DbSet<Slider> Slider { get; set; }
+        public DbSet<GaleriFilter> GaleriFilter { get; set; }
+        public DbSet<Iletisim> Iletisim { get; set; }
     }
 }
