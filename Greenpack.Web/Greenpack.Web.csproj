@@ -197,6 +197,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\CkeditorHtmlHelpers.cs" />
+    <Compile Include="Helpers\EnumHelper.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\HomeViewModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />

@@ -20,9 +20,17 @@
     <div class="auto-container">
 
         <div class="row clearfix">
-
+            @{
+                if (ViewBag.StatusMessage != null)
+                {
+                    <div class="column info-column col-lg-12 text-center">
+                        <h3 class="text-success">@ViewBag.StatusMessage</h3>
+                    </div>
+                }
+            }
             <!--Info Column-->
             <div class="column info-column col-lg-5 col-md-6 col-sm-12 col-xs-12">
+
                 <article class="inner-box">
                     <h3 class="margin-bott-20">ADRESİMİZ</h3>
                     <div class="text margin-bott-40"></div>
@@ -130,65 +138,6 @@
     <script src="~/Content/js/script.js"></script>
     <link href="~/Panel/assets/vendors/base/vendors.bundle.css" rel="stylesheet" />
     <script src="~/Panel/assets/vendors/base/vendors.bundle.js"></script>
-
-    @if (ViewBag.Mesaj != null)
-    {
-        if (ViewBag.Status != "error")
-        {
-            <script>
-                    toastr.options = {
-                        "closeButton": true,
-                        "debug": false,
-                        "newestOnTop": false,
-                        "progressBar": false,
-                        "positionClass": "toast-top-right",
-                        "preventDuplicates": false,
-                        "onclick": null,
-                        "showDuration": "300",
-                        "hideDuration": "1000",
-                        "timeOut": "5000",
-                        "extendedTimeOut": "1000",
-                        "showEasing": "swing",
-                        "hideEasing": "linear",
-                        "showMethod": "fadeIn",
-                        "hideMethod": "fadeOut"
-                    };
-
-                    toastr.success("@ViewBag.Mesaj", "Başarılı");
-
-                     $(document).ready(function () {
-
-                    setTimeout(function () {
-                        location.href = "/greenpack/Iletisim";
-                }, 2500);
-            });
-            </script>
-        }
-        else
-        {
-            <script>
-                    toastr.options = {
-                        "closeButton": true,
-                        "debug": false,
-                        "newestOnTop": false,
-                        "progressBar": false,
-                        "positionClass": "toast-top-right",
-                        "preventDuplicates": false,
-                        "onclick": null,
-                        "showDuration": "300",
-                        "hideDuration": "1000",
-                        "timeOut": "5000",
-                        "extendedTimeOut": "1000",
-                        "showEasing": "swing",
-                        "hideEasing": "linear",
-                        "showMethod": "fadeIn",
-                        "hideMethod": "fadeOut"
-                    };
-
-                    toastr.error("@ViewBag.Mesaj", "Hata");
-            </script>
-        }
-    }
 
 
 }

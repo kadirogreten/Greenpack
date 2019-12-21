@@ -87,8 +87,13 @@ namespace Greenpack.Web.Controllers
         }
 
         [Route("greenpack/iletisim")]
-        public ActionResult Iletisim()
+        public ActionResult Iletisim(MessageId? message)
         {
+            ViewBag.StatusMessage =
+                message == MessageId.SendMessageSuccess ? "Mesajınız başarılı bir şekilde gönderildi!"
+                : message == MessageId.ErrorMessage ? "Beklenmedik bir hata gerçekleşti. Lütfen zorunlu alanları doldurunuz!"
+                : message == MessageId.Error ? "Lütfen yöneticinize başvurunuz!"
+                : "";
             return View();
         }
 
@@ -97,8 +102,10 @@ namespace Greenpack.Web.Controllers
         [Route("greenpack/iletisim")]
         public ActionResult Iletisim([Bind(Include = "Id,AdiSoyadi,Eposta,Mesaj,OkunduMu")] Iletisim iletisim)
         {
+            MessageId? message;
             if (ModelState.IsValid)
             {
+
                 using (var uow = new UnitOfWork(new GreenpackDbContext()))
                 {
 
@@ -111,22 +118,25 @@ namespace Greenpack.Web.Controllers
                         CreatedDate = DateTime.Now
                     });
 
-
-                    uow.Complete();
-                    ViewBag.Mesaj = "Mesajınız başarıyla gönderildi.";
-                    ViewBag.Status = "success";
-                    ViewBag.Baslik = "Harika";
-
-                    return View(iletisim);
+                    try
+                    {
+                        uow.Complete();
+                        message = MessageId.SendMessageSuccess;
+                        return RedirectToAction("iletisim", new { Message = message });
+                    }
+                    catch (Exception)
+                    {
+                        message = MessageId.Error;
+                        return RedirectToAction("iletisim", new { Message = message });
+                    }
+                   
                 }
 
 
             }
             else
             {
-                ViewBag.Mesaj = "Hata";
-                ViewBag.Status = "error";
-                ViewBag.Baslik = "Oops!";
+                message = MessageId.SendMessageSuccess;
                 return View(iletisim);
             }
         }
