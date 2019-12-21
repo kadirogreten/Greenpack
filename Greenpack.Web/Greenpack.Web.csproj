@@ -252,6 +252,7 @@
     <Content Include="Content\fonts\fontawesome-webfonte0a5.svg" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\fonts\revicons90c690c6.svg" />
+    <Content Include="Content\images\favicon.ico" />
     <Content Include="Content\images\logo.png" />
     <Content Include="Content\images\background\bg-pattern.png" />
     <Content Include="Content\images\background\footer-bg.jpg" />

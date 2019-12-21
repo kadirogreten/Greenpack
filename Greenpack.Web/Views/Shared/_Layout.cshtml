@@ -40,6 +40,8 @@
     <meta property="business:contact_data:region" content="Mersin">
     <meta property="business:contact_data:postal_code" content="33020">
     <meta property="business:contact_data:country_name" content="Türkiye">
+    <link href="~/favicon.ico" rel="icon" type="image/x-icon"/>
+-    <link rel="canonical" href="https://www.greenambalaj.com" />
     <!-- Stylesheets -->
     <link href="~/Content/css/bootstrap.css" rel="stylesheet">
     <link href="~/Content/css/revolution-slider.css" rel="stylesheet">
@@ -315,21 +317,21 @@
     <script src="~/Content/js/jquery.fancybox.pack.js"></script>
     <script src="~/Content/js/jquery.fancybox-media.js"></script>
     @RenderSection("scripts", required: false)
-    <script type="application/ld+json">
-        {
+<script type="application/ld+json">
+    {
         "@@context" : "http:\/\/schema.org",
         "@@type" : "LocalBusiness",
         "@@id":"#Business",
         "url": "https:\/\/www.greenambalaj.com\/",
-        "adres" : { "@@type" : "PostalAddress",
-        "addressLocality" : "Mersin",
-        "addressRegion" : "TR",
-        "streetAddress" : "33020 Hüseyin Okan Merzeci Bulvarı No:14/1-1 Akdeniz Mersin"},
+            "adress" : { "@@type" : "PostalAddress",
+            "addressLocality" : "Mersin",
+            "addressRegion" : "TR",
+            "streetAddress" : "33020 Hüseyin Okan Merzeci Bulvarı No:14/1-1 Akdeniz Mersin"},
         "sameAs": [ "https:\/\/facebook.com\/greenorur" ],
         "description" : "Hüseyin Okan Merzeci Bulvarı No:14/1-1 Akdeniz/Mersin",
         "name" : "Green Ambalaj ve Orman Ürünleri",
-        "telefon" : "0553-596-63-61"
-        }
-    </script>
+        "telephone" : "0553-596-63-61"
+    }
+</script>
 </body>
 </html>
