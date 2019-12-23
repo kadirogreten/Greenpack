@@ -252,7 +252,8 @@
     <Content Include="Content\fonts\fontawesome-webfonte0a5.svg" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\fonts\revicons90c690c6.svg" />
-    <Content Include="Content\images\asd.png" />
+    <Content Include="Content\images\favicon.ico" />
+    <Content Include="Content\images\logo.png" />
     <Content Include="Content\images\background\bg-pattern.png" />
     <Content Include="Content\images\background\footer-bg.jpg" />
     <Content Include="Content\images\background\map-pattern.png" />
@@ -929,6 +930,7 @@
     <Content Include="Areas\AbatPanel\Views\Iletisim\Edit.cshtml" />
     <Content Include="Areas\AbatPanel\Views\Iletisim\Index.cshtml" />
     <Content Include="Areas\AbatPanel\Views\Iletisim\OkunanMesajlar.cshtml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\ckeditor\ckeditor.php" />
     <Content Include="Scripts\ckeditor\ckeditor_basic.js" />
