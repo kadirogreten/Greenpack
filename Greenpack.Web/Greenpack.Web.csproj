@@ -205,6 +205,9 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\galeri\56a0b7a0-d79d-416e-bd69-3e04f13f2a09.jpg" />
+    <Content Include="Assets\hizmetler\0327f395-7f19-4985-83bd-18b82acd8f0f.jpg" />
+    <Content Include="Assets\slider\1d8b59b5-c1cd-430a-9aaf-3a7fac122675.jpg" />
     <Content Include="Ckeditor\config.js" />
     <Content Include="Ckeditor\ImageBrowser.aspx" />
     <Content Include="Ckeditor\LinkBrowser.aspx" />
@@ -407,6 +410,8 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="images\ceo-thumb.jpg" />
+    <Content Include="images\uploads\featured-image-4.jpg" />
     <Content Include="Panel\assets\app\js\dashboard.js" />
     <Content Include="Panel\assets\app\js\layout-builder.js" />
     <Content Include="Panel\assets\app\js\my-script.js" />
@@ -1326,10 +1331,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Assets\galeri\" />
-    <Folder Include="Assets\hizmetler\" />
-    <Folder Include="Assets\slider\" />
-    <Folder Include="images\uploads\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
