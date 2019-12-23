@@ -10,15 +10,15 @@ namespace Models.Entities
     public class KurumsalMenu
     {
         public int Id { get; set; }
-        [StringLength(50, ErrorMessage = "{1} karakterden fazla {2} az olamaz!", MinimumLength = 4)]
+        [StringLength(50, ErrorMessage = "{1} karakterden fazla {2} karakterden az olamaz!", MinimumLength = 4)]
         [Display(Name = "Menü Adı")]
         [Required(ErrorMessage = "Boş geçilemez!")]
         public string MenuAdi { get; set; }
-        [StringLength(75, ErrorMessage = "{1} karakterden fazla {2} az olamaz!", MinimumLength = 4)]
+        [StringLength(75, ErrorMessage = "{1} karakterden fazla {2} karakterden az olamaz!", MinimumLength = 4)]
         [Display(Name = "Menü Başlık")]
         [Required(ErrorMessage = "Boş geçilemez!")]
         public string Baslik { get; set; }
-        [StringLength(100, ErrorMessage = "{1} karakterden fazla {2} az olamaz!", MinimumLength = 4)]
+        [StringLength(100, ErrorMessage = "{1} karakterden fazla {2} karakterden az olamaz!", MinimumLength = 4)]
         [Display(Name = "Menü Alt Başlık")]
         [Required(ErrorMessage = "Boş geçilemez!")]
         public string AltBaslik { get; set; }        

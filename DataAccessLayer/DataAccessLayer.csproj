@@ -87,6 +87,14 @@
     <Compile Include="Migrations\201909231559284_iletisims.Designer.cs">
       <DependentUpon>201909231559284_iletisims.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201912231321000_anotation.cs" />
+    <Compile Include="Migrations\201912231321000_anotation.Designer.cs">
+      <DependentUpon>201912231321000_anotation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912231326247_anotation_son.cs" />
+    <Compile Include="Migrations\201912231326247_anotation_son.Designer.cs">
+      <DependentUpon>201912231326247_anotation_son.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -124,6 +132,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201909231559284_iletisims.resx">
       <DependentUpon>201909231559284_iletisims.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912231321000_anotation.resx">
+      <DependentUpon>201912231321000_anotation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912231326247_anotation_son.resx">
+      <DependentUpon>201912231326247_anotation_son.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -12,9 +12,10 @@ namespace Models.Entities
         public int Id { get; set; }
         [Display(Name = "Hizmet Adı")]
         [Required(ErrorMessage = "Boş geçilemez!")]
+        [StringLength(100, ErrorMessage = "{1} karakterden fazla {2} karakterden az olamaz!", MinimumLength = 4)]
         public string HizmetAdi { get; set; }
         [Display(Name = "Hizmet Açıklama")]
-        [Required(ErrorMessage = "Boş geçilemez!")]
+        [Required(ErrorMessage = "Boş geçilemez!")]        
         public string HizmetAciklama { get; set; }
         [Display(Name = "Hizmet Sırası")]
         [Required(ErrorMessage = "Boş geçilemez!")]

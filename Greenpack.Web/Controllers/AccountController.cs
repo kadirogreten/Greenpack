@@ -87,7 +87,7 @@ namespace Greenpack.Web.Controllers
                     return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
                 case SignInStatus.Failure:
                 default:
-                    ModelState.AddModelError("", "Invalid login attempt.");
+                    ModelState.AddModelError("", "Kullanıcı adı veya şifre hatalı!");
                     return View(model);
             }
         }
@@ -137,7 +137,7 @@ namespace Greenpack.Web.Controllers
 
         //
         // GET: /Account/Register
-        [AllowAnonymous]
+        [Authorize(Roles ="Admin")]
         public ActionResult Register()
         {
             return View();
@@ -146,7 +146,7 @@ namespace Greenpack.Web.Controllers
         //
         // POST: /Account/Register
         [HttpPost]
-        [AllowAnonymous]
+        [Authorize(Roles = "Admin")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
@@ -175,7 +175,7 @@ namespace Greenpack.Web.Controllers
 
         //
         // GET: /Account/ConfirmEmail
-        [AllowAnonymous]
+        [Authorize(Roles = "Admin")]
         public async Task<ActionResult> ConfirmEmail(string userId, string code)
         {
             if (userId == null || code == null)
@@ -197,7 +197,7 @@ namespace Greenpack.Web.Controllers
         //
         // POST: /Account/ForgotPassword
         [HttpPost]
-        [AllowAnonymous]
+        [Authorize(Roles = "Admin")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> ForgotPassword(ForgotPasswordViewModel model)
         {
@@ -224,7 +224,7 @@ namespace Greenpack.Web.Controllers
 
         //
         // GET: /Account/ForgotPasswordConfirmation
-        [AllowAnonymous]
+        [Authorize(Roles = "Admin")]
         public ActionResult ForgotPasswordConfirmation()
         {
             return View();
@@ -232,7 +232,7 @@ namespace Greenpack.Web.Controllers
 
         //
         // GET: /Account/ResetPassword
-        [AllowAnonymous]
+        [Authorize(Roles = "Admin")]
         public ActionResult ResetPassword(string code)
         {
             return code == null ? View("Error") : View();
@@ -241,7 +241,7 @@ namespace Greenpack.Web.Controllers
         //
         // POST: /Account/ResetPassword
         [HttpPost]
-        [AllowAnonymous]
+        [Authorize(Roles = "Admin")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> ResetPassword(ResetPasswordViewModel model)
         {

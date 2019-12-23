@@ -188,6 +188,12 @@
                                     </li>
 
                                     <li><a href="@Url.Action("iletisim","greenpack")">İLETİŞİM</a></li>
+
+                                    @if ((User.Identity.IsAuthenticated && User.IsInRole("Admin")) || (User.Identity.IsAuthenticated && User.IsInRole("Greenpack")))
+                                    {
+                                        <li><a href="@Url.Action("index","kurumsalmenu",new { area = "abatpanel"})">PANEL</a></li>
+                                    }
+
                                 </ul>
                             </div>
                         </nav><!-- Main Menu End-->

@@ -127,7 +127,7 @@ namespace Greenpack.Web.Controllers
                     catch (Exception)
                     {
                         message = MessageId.Error;
-                        return RedirectToAction("iletisim", new { Message = message });
+                        return View("iletisim", new { Message = message });
                     }
                    
                 }
@@ -136,7 +136,7 @@ namespace Greenpack.Web.Controllers
             }
             else
             {
-                message = MessageId.SendMessageSuccess;
+                message = MessageId.ErrorMessage;
                 return View(iletisim);
             }
         }
