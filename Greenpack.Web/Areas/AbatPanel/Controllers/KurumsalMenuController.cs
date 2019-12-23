@@ -13,10 +13,10 @@ using ServiceLayer.Uow;
 
 namespace Greenpack.Web.Areas.AbatPanel.Controllers
 {
+    [RequireHttps]
+    [Authorize(Roles = "Admin,Greenpack")]
     public class KurumsalMenuController : Controller
     {
-        
-
         // GET: AbatPanel/KurumsalMenu
         public async Task<ActionResult> Index()
         {

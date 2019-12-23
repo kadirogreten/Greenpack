@@ -14,6 +14,8 @@ using System.IO;
 
 namespace Greenpack.Web.Areas.AbatPanel.Controllers
 {
+    [RequireHttps]
+    [Authorize(Roles = "Admin,Greenpack")]
     public class HizmetlerimizMenuController : Controller
     {
         private GreenpackDbContext db = new GreenpackDbContext();

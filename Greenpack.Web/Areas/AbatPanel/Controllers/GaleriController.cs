@@ -14,10 +14,10 @@ using System.IO;
 
 namespace Greenpack.Web.Areas.AbatPanel.Controllers
 {
+    [RequireHttps]
+    [Authorize(Roles = "Admin,Greenpack")]
     public class GaleriController : Controller
     {
-
-
         // GET: AbatPanel/Galeri
         public async Task<ActionResult> Index()
         {

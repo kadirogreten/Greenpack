@@ -13,6 +13,8 @@ using ServiceLayer.Uow;
 
 namespace Greenpack.Web.Areas.AbatPanel.Controllers
 {
+    [RequireHttps]
+    [Authorize(Roles = "Admin,Greenpack")]
     public class IletisimController : Controller
     {
         private GreenpackDbContext db = new GreenpackDbContext();

@@ -82,7 +82,7 @@ namespace Greenpack.Web.Controllers
         public ActionResult Galeri()
         {
             var uow = new UnitOfWork(new GreenpackDbContext());
-            var galeri = uow.Galeri.GetAllWithInclude().ToList();
+            var galeri = uow.Galeri.GetAllWithInclude();
             return View(galeri);
         }
 
